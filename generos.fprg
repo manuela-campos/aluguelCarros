@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="generos"/>
+        <attribute name="authors" value="DES-MH"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-08 04:14:42 "/>
+        <attribute name="created" value="REVTLU1IO0RFU0tUT1AtS1UxVFBCTjsyMDI1LTA0LTAyOyIxMjozNzowMSAiOzI2OTg="/>
+        <attribute name="edited" value="REVTLU1IO0RFU0tUT1AtS1UxVFBCTjsyMDI1LTA0LTA4OyIwNDoxNDo0MiAiOzI7MjgxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="genero" type="String" array="False" size=""/>
+            <declare name="anos, salario, salNovo" type="Real" array="False" size=""/>
+            <output expression="&quot;Qual &#233; o seu g&#234;nero?&quot;" newline="True"/>
+            <input variable="genero"/>
+            <output expression="&quot;Quantos anos voc&#234; trabalha na empresa?&quot;" newline="True"/>
+            <input variable="anos"/>
+            <output expression="&quot;Informe o seu sal&#225;rio:&quot;" newline="True"/>
+            <input variable="salario"/>
+            <if expression="genero = &quot;Mulheres&quot;">
+                <then>
+                    <if expression="anos &lt;= 5">
+                        <then>
+                            <assign variable="salNovo" expression="salario * 1.04"/>
+                        </then>
+                        <else>
+                            <if expression="anos &gt;=5 &amp;&amp; anos &lt;=10">
+                                <then>
+                                    <assign variable="salNovo" expression="salario * 1.07"/>
+                                </then>
+                                <else>
+                                    <if expression="anos &gt;=15 &amp;&amp; anos &lt;=20">
+                                        <then>
+                                            <assign variable="salNovo" expression="salario * 1.12"/>
+                                        </then>
+                                        <else>
+                                            <if expression="anos &gt;=20">
+                                                <then>
+                                                    <assign variable="salNovo" expression="salario * 1.23"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="anos &lt;= 5">
+                        <then>
+                            <assign variable="salNovo" expression="salario * 1.03"/>
+                        </then>
+                        <else>
+                            <if expression="anos &gt;=5 &amp;&amp; anos &lt;=15">
+                                <then>
+                                    <assign variable="salNovo" expression="salario * 1.08"/>
+                                </then>
+                                <else>
+                                    <if expression="anos &gt;=20 &amp;&amp; anos &lt;=30">
+                                        <then>
+                                            <assign variable="salNovo" expression="salario * 1.14"/>
+                                        </then>
+                                        <else>
+                                            <if expression="anos &gt;=30">
+                                                <then>
+                                                    <assign variable="salNovo" expression="salario * 1.25"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;O valor do novo sal&#225;rio do funcion&#225;rio &#233;:&quot; &amp;salNovo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
